@@ -1,0 +1,20 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: validate-container-images
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: validate-container-images
+      match:
+        resources:
+          kinds:
+            - Pod
+          namespaces:
+            - first-namespace   
+      validate:
+        message: "Pod containers must use images from the specified Quay.io repository."
+        pattern:
+          spec:
+            containers:
+              - image: quay.io/nginx/nginx-ingress

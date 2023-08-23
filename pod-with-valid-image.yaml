@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-valid-image
+  namespace: first-namespace
+  labels:
+    team: "example-team"
+spec:
+  containers:
+    - name: nginx-container
+      image: quay.io/nginx/nginx-ingress
+      resources:
+        limits:
+          cpu: "500m"
+          memory: "512Mi"
