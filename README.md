@@ -10,6 +10,12 @@ This repository contains the following manifests for kyverno Kubernetes:
 
 - `pod-resource-policy.yaml`: This manifest defines a resource limits policy for Pods.
 
-- `validate-container-images-policy.yaml`: This manifest defines a policy to enforce the validate-container-images policy in the first-namespace and allow Pods to be created with any image in other namespaces .
+- `validate-container-images-policy.yaml`: This manifest defines a policy to enforce the validate-container-images policy in the 
+
+first-namespace and allow Pods to be created with any image in other namespaces .
 
 - `pod-label-policy.yaml`: This manifest defines a policy to enforce specific labels on Pods.
+
+- `network-policy-first`: This manifest defines a policy to deny networking from second-namespace.
+
+- `network-policy-second`: This manifest defines a policy to deny networking from first-namespace.
